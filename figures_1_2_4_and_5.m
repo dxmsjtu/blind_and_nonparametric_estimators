@@ -24,7 +24,7 @@ end
 
 pltopts = my_plotting_options_synthetic; % load a bunch of plotting options from separate file
 my_interpreter = 'latex';
-
+FontSize =20；
 %% noise power
 show_qq_indices = 2:2;
 for pp=1:2
@@ -341,7 +341,7 @@ for ss=[1,2] % [2,51,101]
             set (gca, 'XTickLabel', par.EM.n_it_max_list);
             xlim([0 max(log2(par.EM.n_it_max_list))]);
             title(['SNR=' num2str(par.SNR_list(ss)) ', D=' num2str(par.D_list(dd)) ', p=' num2str(par.p_list(pp))]);
-            set(gca,'FontSize',14);
+            set(gca,'FontSize',FontSize);
         end
     end
 end

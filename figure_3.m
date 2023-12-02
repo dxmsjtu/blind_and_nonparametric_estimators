@@ -9,12 +9,12 @@ clear all
 addpath(genpath("functions")) % add functions to path
 
 % rng(0) % set random seed for reproducibility
-trials = 10000; % number of Monte-Carlo trials
-D = 64; % dimension of the vectors (larger dimension gives less variance)
-p_list = 0:0.01:0.5; % activity rate (low p means more sparse)
-N0 = 1; % noise power (fixed for this simulation)
-Es_list = [0.5, 10]; % signal power
-q_list = [1 1 2 2]; % parameter for activity rate estimator
+trials = 10;            % 10000 number of Monte-Carlo trials
+D = 64;                 % dimension of the vectors (larger dimension gives less variance)
+p_list = 0:0.01:0.5;    % activity rate (low p means more sparse)
+N0 = 1;                 % noise power (fixed for this simulation)
+Es_list = [0.5, 10];    % signal power
+q_list = [1 1 2 2];     % parameter for activity rate estimator
 r_list = [2 Inf 4 Inf]; % parameter for activity rate estimator
 
 % sample estimate (activity rate of each realization of the signal):
@@ -41,7 +41,7 @@ for tt = 1:trials % Monte-Carlo trials
         end
     end
 end
-
+FontSize =18;
 %% Plots
 show_variance = 0;
 for SNR_idx = 1:2
